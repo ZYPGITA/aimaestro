@@ -1,0 +1,70 @@
+[
+  {
+    "describe": "打开网页",
+    "operation_type": "open_url",
+    "value": "https://www.baidu.com",
+    "sleep": 2,
+    "asserts": [
+      {
+        "assert_type": "title",
+        "assert_value": "百度一下，你就知道"
+      }
+    ]
+  },
+  {
+    "describe": "输入数值",
+    "operation_type": "input_text",
+    "value": "Pypi aiMaestro",
+    "sleep": 2,
+    "locators": [
+      {
+        "XPATH": "//*[@id=\"kw1\"]"
+      },
+      {
+        "XPATH": "//*[@id=\"kw2\"]"
+      },
+      {
+        "XPATH": "//*[@id=\"kw3\"]"
+      },
+      {
+        "XPATH": "//*[@id=\"kw\"]"
+      }
+    ]
+  },
+  {
+    "describe": "点击查询按钮",
+    "operation_type": "click",
+    "sleep": 2,
+    "locators": [
+      {
+        "XPATH": "//*[@id=\"su\"]"
+      }
+    ],
+    "asserts": [
+      {
+        "assert_type": "text",
+        "assert_value": "百度为您找到以下结果",
+        "locators": [
+          {
+            "XPATH": "//*[@id=\"tsn_inner\"]/div[2]/span"
+          }
+        ]
+      },
+      {
+        "assert_type": "attribute",
+        "expression": "class",
+        "assert_value": "hint_PIwZX c_font_2AD7M",
+        "locators": [
+          {
+            "XPATH": "//*[@id=\"tsn_inner\"]/div[2]/span"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "describe": "查询结果截图",
+    "operation_type": "save_screenshot",
+    "sleep": 2
+  }
+]
