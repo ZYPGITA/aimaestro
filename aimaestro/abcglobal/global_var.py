@@ -21,12 +21,13 @@ class GlobalVar:
 
     def __initialize(self, config_file: str, current_dir: str):
         self.config_file = config_file
-        self._load_global_config()
-        self._load_taskflux_config()
 
         global ROOT_PATH
         ROOT_PATH = current_dir
         print('ROOT_PATH == ', ROOT_PATH)
+
+        self._load_global_config()
+        self._load_taskflux_config()
 
     def _load_global_config(self):
         with open(self.config_file, "r", encoding="utf-8") as f:

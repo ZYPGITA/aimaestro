@@ -124,8 +124,14 @@ def _start_schedule():
         cron_str='0/30 * * * * *',
         func_object=TaskDistribution(config=_CONFIG).run
     )
+    scheduler_config = _CONFIG.get('scheduler')
 
-    scheduler_start()
+    enable = True
+    if scheduler_config:
+        enable = scheduler_config.get('enable')
+
+    if enable:
+        scheduler_start()
 
 
 def initialization_global_attr(config: dict):

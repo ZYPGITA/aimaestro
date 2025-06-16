@@ -71,6 +71,9 @@ aimaestro: Intelligent Dispatching
       bind: '0.0.0.0'
       port: 15673
 
+    scheduler:
+      enable: false
+
 2.2 Initialize
 ~~~~~~~~~~~~~~
 
