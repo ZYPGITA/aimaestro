@@ -5,7 +5,7 @@ with open("README.rst", "r", encoding="utf-8") as f:
 
 setup(
     name='aimaestro',
-    version='1.1.7',
+    version='1.1.8',
     description="aimaestro Description",
     long_description=long_description,
     include_package_data=True,
